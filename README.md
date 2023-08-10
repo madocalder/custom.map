@@ -16,10 +16,20 @@ remotes::install_github("devOpifex/custom.map")
 
 ## Example
 
+Creating a map from scratch.
+
 ``` r
 library(custom.map)
 
 hc_custom_map(data = test_data, joinBy = "fips", value = "value") |> 
   highcharter::hc_colorAxis(min = 4600)
+```
+
+Adding the series to an existing highchart.
+
+``` r
+highcharter::highchart(type = "map") |>
+  hc_add_custom_map(data = test_data, joinBy = "fips", value = "value") |> 
+  hc_colorAxis(min = 4600)
 ```
 

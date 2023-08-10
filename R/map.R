@@ -8,6 +8,7 @@
 #' hc_custom_map(data = test_data, joinBy = "fips", value = "value") |> 
 #'   highcharter::hc_colorAxis(min = 4600)
 #' 
+#' @name custom_map
 #' @export
 hc_custom_map <- function(...) {
   highcharter::highchart(type = "map") |>
@@ -17,6 +18,23 @@ hc_custom_map <- function(...) {
       showInLegend = FALSE,
       ...
     ) |>
+    highcharter::hc_add_series(
+      type = "mapline",
+      mapData = separators,
+      showInLegend = FALSE,
+      enableMouseTracking = FALSE
+    )
+}
+
+#' @name custom_map
+#' @export
+hc_add_custom_map <- function(...) {
+  highcharter::hc_add_series(
+    ...,
+    type = "map",
+    mapData = us_map,
+    showInLegend = FALSE
+  ) |>
     highcharter::hc_add_series(
       type = "mapline",
       mapData = separators,
