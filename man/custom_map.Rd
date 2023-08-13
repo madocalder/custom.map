@@ -4,14 +4,23 @@
 \alias{custom_map}
 \alias{hc_custom_map}
 \alias{hc_add_custom_map}
+\alias{hc_add_custom_map_cat}
 \title{Custom Map}
 \usage{
 hc_custom_map(...)
 
 hc_add_custom_map(...)
+
+hc_add_custom_map_cat(data, value, joinBy, ...)
 }
 \arguments{
 \item{...}{Arguments passed to \code{\link[highcharter:hc_add_series]{highcharter::hc_add_series()}}.}
+
+\item{data}{Dataset to map.}
+
+\item{value}{Categorical value to map, column of \code{data}.}
+
+\item{joinBy}{Column to join with map dataset.}
 }
 \description{
 Custom map of the United States.

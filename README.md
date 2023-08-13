@@ -18,7 +18,7 @@ remotes::install_github("devOpifex/custom.map")
 
 Creating a map from scratch.
 
-``` r
+```r
 library(custom.map)
 
 hc_custom_map(data = test_data, joinBy = "fips", value = "value") |> 
@@ -27,9 +27,38 @@ hc_custom_map(data = test_data, joinBy = "fips", value = "value") |>
 
 Adding the series to an existing highchart.
 
-``` r
+```r
 highcharter::highchart(type = "map") |>
   hc_add_custom_map(data = test_data, joinBy = "fips", value = "value") |> 
   hc_colorAxis(min = 4600)
+```
+
+Categorical map
+
+```r
+data <- test_data
+data$categories <- sample(LETTERS[1:3], nrow(data), replace = TRUE)
+
+highcharter::highchart(type = "map") |> 
+  hc_add_custom_map_cat(data = data, joinBy = "fips", value = "categories") |>
+  highcharter::hc_colorAxis(
+    dataClasses = list(
+      list(
+        from = "A",
+        to = "A",
+        name = "A"
+      ),
+      list(
+        from = "B",
+        to = "B",
+        name = "B"
+      ),
+      list(
+        from = "C",
+        to = "C",
+        name = "C"
+      )
+    )
+  )
 ```
 
