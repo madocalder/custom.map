@@ -7,14 +7,16 @@
 \alias{hc_add_custom_map_cat}
 \title{Custom Map}
 \usage{
-hc_custom_map(...)
+hc_custom_map(..., mapType = c("a", "b"))
 
-hc_add_custom_map(...)
+hc_add_custom_map(..., mapType = c("a", "b"))
 
-hc_add_custom_map_cat(data, value, joinBy, ...)
+hc_add_custom_map_cat(data, value, joinBy, ..., mapType = c("a", "b"))
 }
 \arguments{
 \item{...}{Arguments passed to \code{\link[highcharter:hc_add_series]{highcharter::hc_add_series()}}.}
+
+\item{mapType}{Type of map, accepts \code{a} or \code{b}.}
 
 \item{data}{Dataset to map.}
 
