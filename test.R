@@ -23,6 +23,8 @@ server <- function(input, output) {
     data <- test_data
     data$categories <- sample(LETTERS[1:3], nrow(data), replace = TRUE)
 
+    print(head(data))
+
     highcharter::highchart(type = "map") |> 
       hc_add_custom_map_cat(data = data, joinBy = "fips", value = "categories") |>
       highcharter::hc_colorAxis(
