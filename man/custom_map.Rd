@@ -7,11 +7,11 @@
 \alias{hc_add_custom_map_cat}
 \title{Custom Map}
 \usage{
-hc_custom_map(..., mapType = c("a", "b"))
+hc_custom_map(..., mapType = c("a", "b", "c"))
 
-hc_add_custom_map(..., mapType = c("a", "b"))
+hc_add_custom_map(..., mapType = c("a", "b", "c"))
 
-hc_add_custom_map_cat(data, value, joinBy, ..., mapType = c("a", "b"))
+hc_add_custom_map_cat(data, value, joinBy, ..., mapType = c("a", "b", "c"))
 }
 \arguments{
 \item{...}{Arguments passed to \code{\link[highcharter:hc_add_series]{highcharter::hc_add_series()}}.}

@@ -14,7 +14,7 @@
 #' 
 #' @name custom_map
 #' @export
-hc_custom_map <- function(..., mapType = c("a", "b")) {
+hc_custom_map <- function(..., mapType = c("a", "b", "c")) {
   map <- get_map(mapType)
 
   h <- highcharter::highchart(type = "map") |>
@@ -39,7 +39,7 @@ hc_custom_map <- function(..., mapType = c("a", "b")) {
 
 #' @name custom_map
 #' @export
-hc_add_custom_map <- function(..., mapType = c("a", "b")) {
+hc_add_custom_map <- function(..., mapType = c("a", "b", "c")) {
   map <- get_map(mapType)
 
   h <- highcharter::hc_add_series(
@@ -63,7 +63,7 @@ hc_add_custom_map <- function(..., mapType = c("a", "b")) {
 
 #' @name custom_map
 #' @export
-hc_add_custom_map_cat <- function(data, value, joinBy, ..., mapType = c("a", "b")) {
+hc_add_custom_map_cat <- function(data, value, joinBy, ..., mapType = c("a", "b", "c")) {
   map <- get_map(mapType)
 
   data$value <- NULL
@@ -90,12 +90,15 @@ hc_add_custom_map_cat <- function(data, value, joinBy, ..., mapType = c("a", "b"
     )
 }
 
-get_map <- function(type = c("a", "b")) {
+get_map <- function(type = c("a", "b", "c")) {
   type <- match.arg(type)
 
   if(type == "a")
     return(us_map)
 
-  return(us_map2)
+  if(type == "b")
+    return(us_map2)
+
+  return(us_map3)
 }
 

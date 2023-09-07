@@ -3,6 +3,7 @@ library(dplyr)
 m <- jsonlite::read_json("inst/mapdata.json")
 m2 <- jsonlite::read_json("inst/mapdata2.json")
 m3 <- jsonlite::read_json("inst/mapdata3.json")
+m4 <- jsonlite::read_json("inst/mapdata4.json")
 
 us_map <- m[[1]]$mapData
 us_map <- purrr::map2(us_map, m2[[1]]$mapData, \(m1, m2) {
@@ -15,6 +16,16 @@ us_map2 <- purrr::map(us_map2, \(m) {
   m$fips <- as.numeric(m$fips)
   return(m)
 })
+us_map3 <- m4[[1]]$mapData
+us_map3 <- purrr::map(us_map3, \(m3) {
+  cn <- us_map |>
+    purrr::keep(\(x) {
+      x$id == m3$id
+    })
+  m3$fips <- as.numeric(cn[[1]]$fips)
+  m3$name <- cn[[1]]$name
+  return(m3)
+})
 
 separators <- m2[[2]]$mapData
 
@@ -25,5 +36,5 @@ test_data <- us_map |>
     value = 1e5 * abs(rt(n(), df = 10))
   )
 
-usethis::use_data(us_map, us_map2, separators, overwrite = TRUE, internal = TRUE)
+usethis::use_data(us_map, us_map2, us_map3, separators, overwrite = TRUE, internal = TRUE)
 usethis::use_data(test_data, overwrite = TRUE)
