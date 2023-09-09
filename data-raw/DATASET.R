@@ -18,10 +18,22 @@ us_map2 <- purrr::map(us_map2, \(m) {
 })
 us_map3 <- m4[[1]]$mapData
 us_map3 <- purrr::map(us_map3, \(m3) {
+  m3$id <- m3$id |>
+    (\(.) gsub("id", "", .))() |>
+    as.integer() |>
+    (\(.) . - 1)() |>
+    (\(.) paste0("id", .))()
+
   cn <- us_map |>
     purrr::keep(\(x) {
       x$id == m3$id
     })
+
+  if(length(cn) == 0){
+    cat("Could not find:", m3$id, "\n")
+    return(m3)
+  }
+
   m3$fips <- as.numeric(cn[[1]]$fips)
   m3$name <- cn[[1]]$name
   return(m3)
