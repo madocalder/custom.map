@@ -40,6 +40,7 @@ us_map3 <- purrr::map(us_map3, \(m3) {
 })
 
 separators <- m2[[2]]$mapData
+separators2 <- m4[[2]]$mapData
 
 test_data <- us_map |>
   purrr::map_dfr(as.data.frame) |>
@@ -48,5 +49,5 @@ test_data <- us_map |>
     value = 1e5 * abs(rt(n(), df = 10))
   )
 
-usethis::use_data(us_map, us_map2, us_map3, separators, overwrite = TRUE, internal = TRUE)
+usethis::use_data(us_map, us_map2, us_map3, separators, separators2, overwrite = TRUE, internal = TRUE)
 usethis::use_data(test_data, overwrite = TRUE)

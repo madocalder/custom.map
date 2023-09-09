@@ -27,11 +27,15 @@ hc_custom_map <- function(..., mapType = c("a", "b", "c")) {
   
   if(mapType[1] != "a")
     return(h)
-  
+
+  sep <- separators2
+  if(mapType[1] == "a")
+    sep <- separators
+ 
   h |>
     highcharter::hc_add_series(
       type = "mapline",
-      mapData = separators,
+      mapData = sep,
       showInLegend = FALSE,
       enableMouseTracking = FALSE
     )
@@ -51,11 +55,15 @@ hc_add_custom_map <- function(..., mapType = c("a", "b", "c")) {
 
   if(mapType[1] != "a")
     return(h)
+
+  sep <- separators2
+  if(mapType[1] == "a")
+    sep <- separators
   
   h |>
     highcharter::hc_add_series(
       type = "mapline",
-      mapData = separators,
+      mapData = sep,
       showInLegend = FALSE,
       enableMouseTracking = FALSE
     )
@@ -80,11 +88,15 @@ hc_add_custom_map_cat <- function(data, value, joinBy, ..., mapType = c("a", "b"
 
   if(mapType[1] != "a")
     return(h)
+
+  sep <- separators2
+  if(mapType[1] == "a")
+    sep <- separators
   
   h |>
     highcharter::hc_add_series(
       type = "mapline",
-      mapData = separators,
+      mapData = sep,
       showInLegend = FALSE,
       enableMouseTracking = FALSE
     )
