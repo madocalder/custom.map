@@ -3,6 +3,8 @@ usethis::create_github_token() #create the PAT
 gitcreds::gitcreds_set() #set the credentials
 usethis::edit_r_environ() #store the PAT in renviron
 
+GITHUB_PAT=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
+
 install.packages("remotes")
 remotes::install_github("lindsayjorgenson/custom.map")
 
@@ -13,6 +15,9 @@ library(remotes)
 library(usethis)
 library(gitcreds)
 
+usethis::create_github_token() #create the PAT
+gitcreds::gitcreds_set() #set the credentials
+usethis::edit_r_environ() #store the PAT in renviron
 
 # #install custom.map
 install_github("lindsayjorgenson/custom.map")
