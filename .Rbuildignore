@@ -1,2 +1,4 @@
 ^data-raw$
 ^test\.R$
+^.*\.Rproj$
+^\.Rproj\.user$
