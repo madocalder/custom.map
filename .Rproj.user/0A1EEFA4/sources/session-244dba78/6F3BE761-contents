@@ -1,0 +1,25 @@
+Package: custom.map
+Title: Custom Map of the United States of America Including Freely Associated States
+Version: 0.0.0.9000
+Authors@R: 
+  c(
+    person(given = "John",
+           family = "Coene",
+           role = c("aut", "cre"),
+           email = "john@opifex.org",
+           comment = c(ORCID = "0000-0002-6637-4107")),
+    person(family = "The Association of State and Territorial Health Officials", role = c("fnd", "cph"))
+  )
+Description: Custom map of the 'United States of America' including 'Freely Associated States'.
+License: file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests:
+  highcharter,
+  jsonlite,
+  dplyr,
+  purrr
+Depends: 
+    R (>= 2.10)
+LazyData: true
