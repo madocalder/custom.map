@@ -1,2 +1,5 @@
 ^data-raw$
 ^test\.R$
+^docs$
+^site$
+^LICENSE\.md$

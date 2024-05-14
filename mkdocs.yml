@@ -1,0 +1,42 @@
+site_name: custom.map
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  favicon: images/ylogo.png
+  use_pygments: true
+  palette:
+    primary: teal
+    accent: orange
+  features:
+    - navigation.instant
+    - search.suggest
+
+markdown_extensions:
+    - admonition
+    - meta
+    - smarty
+    - pymdownx.highlight:
+        linenums: true
+    - pymdownx.superfences
+    - pymdownx.inlinehilite
+    - attr_list
+    - toc:
+        permalink: True
+        separator: "-"
+
+plugins:
+  - search
+
+extra:
+  generator: false
+
+repo_url: https://github.com/the-y-company/custom.map
+repo_name: Github
+site_description: Custom map of the United States for highcharter
+site_author: The Y Company
+
+nav:
+  - Home: index.md
+  - Install: installation.md
+  - Get Started: get-started.md

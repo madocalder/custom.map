@@ -5,6 +5,8 @@
 
 Custom map of the 'United States of America' including 'Freely Associated States' for highcharter.
 
+![](images/examples.png)
+
 ## Installation
 
 You can install the development version of custom.map from [GitHub](https://github.com/) with:
@@ -62,3 +64,8 @@ highcharter::highchart(type = "map") |>
   )
 ```
 
+This product was funded by [The Association of State and Territorial Health Officials](https://www.astho.org),
+and was supported by [OE22-2203: Strengthening U.S. Public Health Infrastructure, Workforce, and Data Systems grant](https://www.cdc.gov/infrastructure/phig/index.html)
+Number 6 NE11OE000066, funded by CDC. 
+Its contents are solely the responsibility of the authors and do not necessarily represent 
+the official views of CDC.
