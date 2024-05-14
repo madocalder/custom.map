@@ -1,22 +1,3 @@
-# https://happygitwithr.com/https-pat
-usethis::create_github_token() #create the PAT
-gitcreds::gitcreds_set() #set the credentials
-usethis::edit_r_environ() #store the PAT in renviron
-
-install.packages("remotes")
-install.packages("usethis")
-install.packages("gitcreds")
-
-library(remotes)
-library(usethis)
-library(gitcreds)
-
-remotes::install_github("lindsayjorgenson/custom.map")
-
-library(custom.map)
-
-# #install custom.map
-install_github("lindsayjorgenson/custom.map")
 #' Custom Map
 #' 
 #' Custom map of the United States.
